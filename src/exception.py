@@ -1,4 +1,5 @@
 import sys #importing sys library
+from src.logger import logging
 
 def error_message_detail(error,error_detail:sys): #importing error_detail from sys library
     _,_,exc_tb = error_detail.exc_info() #third variable has all the information related to 
@@ -22,10 +23,10 @@ class CustomException(Exception): # Inheritting exception class
         return self.error_message
     
 
-# if __name__ == "__main__":
-#     try: 
-#         a = 1/0
-#     except Exception as e:
-#         logging.info("Execution has started")
-#         raise CustomException(e,sys)
+if __name__ == "__main__":
+    try: 
+        a = 1/0
+    except Exception as e:
+        logging.info("Execution has started")
+        raise CustomException(e,sys)
     
