@@ -27,9 +27,8 @@ Dataset Source Link :
 
 ### Check this link for details : [American Gem Society](https://www.americangemsociety.org/ags-diamond-grading-system/)
 
-# Postman Testing of API :
-
-![API Prediction](./Screenshots/APIPrediction.jpg)
+### Screenshot of webpage 
+[!Webpage](./Screenshots/webpage.png)
 
 # Approach for the project 
 
