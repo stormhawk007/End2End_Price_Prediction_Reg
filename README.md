@@ -28,7 +28,7 @@ Dataset Source Link :
 ### Check this link for details : [American Gem Society](https://www.americangemsociety.org/ags-diamond-grading-system/)
 
 ### Screenshot of webpage 
-[!Webpage](./Screenshots/webpage.png)
+[!Webpage] (./Screenshots/webpage.png)
 
 # Approach for the project 
 
