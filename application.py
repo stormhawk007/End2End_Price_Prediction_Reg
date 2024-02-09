@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template,jsonify
 from flask_cors import CORS,cross_origin
 from src.pipeline.predict_pipeline import CustomData, PredictPipeline
+from src.exception import CustomException
+import sys
 
 application = Flask(__name__)
 
@@ -14,29 +16,34 @@ def home_page():
 @app.route('/predict',methods=['GET','POST'])
 # @cross_origin()
 def predict_datapoint():
-    if request.method == 'GET':
-        return render_template('index.html')
-    else:
-        data = CustomData(
-            carat = float(request.form.get('carat')),
-            depth = float(request.form.get('depth')),
-            table = float(request.form.get('table')),
-            x = float(request.form.get('x')),
-            y = float(request.form.get('y')),
-            z = float(request.form.get('z')),
-            cut = request.form.get('cut'),
-            color= request.form.get('color'),
-            clarity = request.form.get('clarity')
-        )
+    try:
+        if request.method == 'GET':
+            return render_template('index.html')
+        else:
+            data = CustomData(
+                carat = float(request.form.get('carat')),
+                depth = float(request.form.get('depth')),
+                table = float(request.form.get('table')),
+                x = float(request.form.get('x')),
+                y = float(request.form.get('y')),
+                z = float(request.form.get('z')),
+                cut = request.form.get('cut'),
+                color= request.form.get('color'),
+                clarity = request.form.get('clarity')
+            )
 
-        pred_df = data.get_data_as_dataframe()
-        
-        print(pred_df)
+            pred_df = data.get_data_as_dataframe()
+            
+            print(pred_df)
 
-        predict_pipeline = PredictPipeline()
-        pred = predict_pipeline.predict(pred_df)
-        results = round(pred[0],2)
-        return render_template('index.html',results=results,pred_df = pred_df)
+            predict_pipeline = PredictPipeline()
+            pred = predict_pipeline.predict(pred_df)
+            results = round(pred[0],2)
+            return render_template('index.html',results=results,pred_df = pred_df)
+    except:
+        CustomException(Exception,sys)
+        return render_template('index.html',results="N/A")
+
     
 # @app.route('/predictAPI',methods=['POST'])
 # @cross_origin()
