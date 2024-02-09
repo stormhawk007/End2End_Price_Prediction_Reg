@@ -2,6 +2,7 @@ from flask import Flask, request, render_template,jsonify
 from flask_cors import CORS,cross_origin
 from src.pipeline.predict_pipeline import CustomData, PredictPipeline
 from src.exception import CustomException
+import logging
 import sys
 
 application = Flask(__name__)
@@ -41,6 +42,7 @@ def predict_datapoint():
             results = round(pred[0],2)
             return render_template('index.html',results=results,pred_df = pred_df)
     except:
+        logging.info()
         CustomException(Exception,sys)
         return render_template('index.html',results="N/A")
 
