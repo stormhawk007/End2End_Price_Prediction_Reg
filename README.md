@@ -63,5 +63,5 @@ Link : [Model Training Notebook](./notebook/2_Model_Training_Gemstone.ipynb)
 
 Link : [LIME Interpretation](./notebook/3_Explainability_with_LIME.ipynb)
 
-## Screenshot of webpage 
+# Screenshot of webpage 
 ![Webpage](/Screenshots/webpage.png)
