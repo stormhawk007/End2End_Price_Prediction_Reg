@@ -27,9 +27,6 @@ Dataset Source Link :
 
 ### Check this link for details : [American Gem Society](https://www.americangemsociety.org/ags-diamond-grading-system/)
 
-### Screenshot of webpage 
-![Webpage](/Screenshots/webpage.png)
-
 # Approach for the project 
 
 1. Data Ingestion : 
@@ -65,3 +62,6 @@ Link : [Model Training Notebook](./notebook/2_Model_Training_Gemstone.ipynb)
 # Model Interpretation with LIME 
 
 Link : [LIME Interpretation](./notebook/3_Explainability_with_LIME.ipynb)
+
+## Screenshot of webpage 
+![Webpage](/Screenshots/webpage.png)
