@@ -10,12 +10,10 @@ application = Flask(__name__)
 app = application
 
 @app.route('/')
-# @cross_origin()
 def home_page():
     return render_template('index.html')
 
 @app.route('/predict',methods=['GET','POST'])
-# @cross_origin()
 def predict_datapoint():
     try:
         if request.method == 'GET':
