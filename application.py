@@ -46,29 +46,7 @@ def predict_datapoint():
         CustomException(Exception,sys)
         return render_template('index.html',results="N/A")
 
-    
-# @app.route('/predictAPI',methods=['POST'])
-# @cross_origin()
-# def predict_api():
-#     if request.method=='POST':
-#         data = CustomData(
-#             carat = float(request.json['carat']),
-#             depth = float(request.json['depth']),
-#             table = float(request.json['table']),
-#             x = float(request.json['x']),
-#             y = float(request.json['y']),
-#             z = float(request.json['z']),
-#             cut = request.json['cut'],
-#             color = request.json['color'],
-#             clarity = request.json['clarity']
-#         )
 
-#         pred_df = data.get_data_as_dataframe()
-#         predict_pipeline = PredictPipeline()
-#         pred = predict_pipeline.predict(pred_df)
-
-#         dct = {'price':round(pred[0],2)}
-#         return jsonify(dct)
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8000,debug=True)
